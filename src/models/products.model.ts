@@ -9,12 +9,12 @@ const products = [
     {
         id: 'redshoe',
         description: 'Red Shoe',
-        price: 42.12
+        price: 42.12,
     },
     {
         id: 'bluejean',
         description: 'Blue Jean',
-        price: 55.55
+        price: 55.55,
     },
 ] as Product[];
 
@@ -31,7 +31,21 @@ const getProductsByPrice = (min: number, max: number): Product[] => {
 };
 
 
+const addProduct = (id: string, description: string, price: number): Product => {
+    const newProduct: Product = {
+        id,
+        description,
+        price,
+    };
+
+    products.push(newProduct);
+    
+    return newProduct;
+}
+
+
 export const productModel = {
     getAll,
     getProductsByPrice,
+    addProduct,
 };
